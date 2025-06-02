@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from 'react';
-import { SafeAreaView,Image,Animated,ScrollView,View, Text, StyleSheet,Linking, TouchableOpacity } from 'react-native';
-import { FontAwesome } from '@expo/vector-icons';
-import {FlickeringImage} from '../aux_functions/aux_functions'
+
+import { SafeAreaView,Image,ScrollView,View, Text, StyleSheet,Linking, TouchableOpacity } from 'react-native';
+import { gen_styles } from '../aux_functions/styles';
+import { ch } from '../aux_functions/dimensions';
 
 const openLink = async (url:string) => {
   const supported = await Linking.canOpenURL(url)
@@ -12,50 +12,30 @@ const openLink = async (url:string) => {
 
 
 export default function CoursesCertificates() {
-  const moveAnim = useRef(new Animated.Value(0)).current;
-
-  useEffect(() => {
-      Animated.loop(
-        Animated.sequence([
-          Animated.timing(moveAnim, {
-            toValue: 10,
-            duration: 500,
-            useNativeDriver: true,
-          }),
-          Animated.timing(moveAnim, {
-            toValue: 0,
-            duration: 500,
-            useNativeDriver: true,
-          }),
-        ])
-      ).start();
-    }, []);
-
-
 
   return (
-    <SafeAreaView style={{  }}>
+    <SafeAreaView>
     <ScrollView contentContainerStyle={styles.maincontainer}>
       <View style={styles.titlescontainer}><Text style={styles.titles}>REGULATED</Text></View>
       
       <View style={styles.container}>
         <TouchableOpacity onPress={() => openLink('https://www.talent.upc.edu/cat/estudis/formacio/curs/310401/postgrau-artificial-intelligence-deep-learning/')}>
-          <FlickeringImage source={require('../assets/logo_upc.png')}/>
-          <Text style={{fontWeight:'200',width:80,textAlign:'center'}}>Certificate 🔗 </Text>
+          <Image resizeMode = 'contain' style = {gen_styles.images_logos} source={require('../assets/logo_upc.png')}/>
+          <Text style={gen_styles.certificates}>Certificate 🔗 </Text>
         </TouchableOpacity>
-        <View style={{flex:1,borderWidth:0,flexShrink:1}}>
-          <Text style={{ fontWeight: 'bold'}}>ARTIFICIAL INTELLIGE & DEEP LEARNING </Text>
+        <View style={{flex:1,flexShrink:1}}>
+          <Text style={{ fontWeight: 'bold',fontSize:ch(14.5)}}>ARTIFICIAL INTELLIGE & DEEP LEARNING </Text>
           <Text style={styles.text}>I would be a fool if I wasn't interested in AI, so I started this postgraduate specialized in <Text style={{ fontWeight: 'bold' }}>deep learning</Text> where we learned to understand neuronal networks, how are they trained and how to mold them to resolve tasks related with <Text style={{ fontWeight: 'bold' }}>NLP, Computer Vision, Speech Processing...</Text></Text>
         </View>
 
       </View>
       <View style={styles.container}>
         <TouchableOpacity onPress={() => openLink('https://www.upc.edu/ca/graus/enginyeria-de-sistemes-audiovisuals-terrassa-eseiaat')}>
-          <FlickeringImage source={require('../assets/logo_upc.png')}  />
-          <Text style={{fontWeight:'200',width:80,textAlign:'center'}}>Certificate 🔗 </Text>
+          <Image resizeMode = 'contain' style = {gen_styles.images_logos} source={require('../assets/logo_upc.png')}  />
+          <Text style={gen_styles.certificates}>Certificate 🔗 </Text>
         </TouchableOpacity>
         <View style={{flex:1,borderWidth:0,flexShrink:1}}>
-          <Text style={{ fontWeight: 'bold'}}>TELECOMMUNICATIONS ENGINEERING</Text>
+          <Text style={{ fontWeight: 'bold',fontSize:ch(14.5)}}>TELECOMMUNICATIONS ENGINEERING</Text>
           <Text style={styles.text}>
             Specifically I completed the <Text style={{ fontWeight: 'bold' }}>Audiovisual Systems Engineering</Text> degree, which is a branch of telecomms, where as a core competencies I learned
             fundamentals & applications of <Text style={{ fontWeight: 'bold' }}>audio and video</Text> systems. 
@@ -67,14 +47,14 @@ export default function CoursesCertificates() {
         
       </View>
       
-      <View style={styles.titlescontainer}><Text style={styles.titles}>OTHERS<Text style={{fontSize:23}}>🧪✅</Text></Text></View>
+      <View style={styles.titlescontainer}><Text style={styles.titles}>OTHERS<Text style={{fontSize:ch(23)}}>🧪✅</Text></Text></View>
       <View style={styles.container}>
         <TouchableOpacity onPress={() => openLink('https://drive.google.com/file/d/1bS2iu1KAXqgd-IdXJcJ1hKMmGmWs6FH2/view?usp=sharing')}>
-          <FlickeringImage source={require('../assets/btc_logo.png')} />
-          <Text style={{fontWeight:'200',width:80,textAlign:'center'}}>Certificate 🔗 </Text>
+          <Image resizeMode = 'contain' style = {[gen_styles.images_logos,{width:ch(90),height:ch(45)}]} source={require('../assets/btc_logo.png')} />
+          <Text style={gen_styles.certificates}>Certificate 🔗 </Text>
         </TouchableOpacity>
         <View style={{flex:1,borderWidth:0,flexShrink:1}}>
-          <Text style={{ fontWeight: 'bold'}}>BLOCKCHAIN BASICS</Text>
+          <Text style={{ fontWeight: 'bold',fontSize:ch(14.5)}}>BLOCKCHAIN BASICS</Text>
           <Text style={styles.text}>I am also interested in the whole blockchain system and how smart contracts and cryptocurrencies really work on the backend, for sure I'm always prioritizing learning about economics & stock market over wasting on scam coins if that's what you thought😁</Text>
         </View>
         
@@ -109,20 +89,13 @@ const styles = StyleSheet.create({
     elevation: 3
      
     },
-  text: {flexShrink:1,fontSize: 15,textAlign:'justify'},
-  logoscerts:{
-    width:80,
-    height:80,
-    margin:3
-
-  },
-  titles:{fontFamily:'sans-serif-thin',fontSize:30},
+  text: {flexShrink:1,fontSize: ch(15),textAlign:'justify'},
+  titles:{fontFamily:'sans-serif-thin',fontSize:ch(30)},
   titlescontainer:{
     flex:1,
     alignItems:'center',
-    borderWidth:0,
     borderColor:'black',
-    margin:20, 
+    margin:ch(10), 
 
   }
 });

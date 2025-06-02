@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "MYCV",
+    "name": "EMKA'S CV",
     "slug": "MYCV",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/emka_logo.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/emka_logo.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -24,7 +24,7 @@
       "package": "com.mkituss.MYCV"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/emka_logo.png"
     },
     "extra": {
       "eas": {
