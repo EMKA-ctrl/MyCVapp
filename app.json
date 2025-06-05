@@ -4,11 +4,11 @@
     "slug": "MYCV",
     "version": "1.0.1",
     "orientation": "portrait",
-    "icon": "./assets/emka_logo.png",
+    "icon": "./assets/ms_logo.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/emka_logo.png",
+      "image": "./assets/ms_logo.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -17,14 +17,14 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/ms_logo.png",
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
       "package": "com.mkituss.MYCV"
     },
     "web": {
-      "favicon": "./assets/emka_logo.png"
+      "favicon": "./assets/ms_logo.png"
     },
     "extra": {
       "eas": {

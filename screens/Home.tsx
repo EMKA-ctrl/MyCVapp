@@ -26,7 +26,8 @@ const openMail = async () => {
   const email = 'sebastiamarc@gmail.com';
   const subject = 'Contact from App';
   const appUrl = `mailto:${email}?subject=${encodeURIComponent(subject)}`;
-  const webUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${encodeURIComponent(subject)}`;
+  const webUrl = "https://mail.google.com/mail/?view=cm&fs=1&to=sebastiamarc@gmail.com&su=Contact%20from%20App";
+
 
 
   const supported = await Linking.canOpenURL(appUrl);
@@ -70,7 +71,9 @@ export default function HomeScreen({ navigation }: any) {
           <TouchableOpacity style={styles.btnTopics} onPress={() => navigation.navigate('Courses & Certificates')}><Text style={styles.txtTopics}>Courses & Certificates 🏅</Text></TouchableOpacity>  
         </View>
         
-        <View style={styles.logoContainer}>
+        
+      </View>
+      <View style={styles.logoContainer}>
           <TouchableOpacity  onPress={openLinkedIn}>
                   <Image style={styles.logos} source={require('../assets/linkedin_logo.png')} ></Image>
           </TouchableOpacity>
@@ -81,7 +84,6 @@ export default function HomeScreen({ navigation }: any) {
                   <Image style={styles.logos} source={require('../assets/mail_logo.png')} ></Image>
           </TouchableOpacity>
         </View>
-      </View>
       <View style={styles.botstuff}>
         <Text style={{fontSize:ch(15)}}>I made this with React Native and Expo!</Text>
           <View style={styles.logoscontainer}>
@@ -108,6 +110,7 @@ const styles = StyleSheet.create({
     height: ch(200),
     borderRadius: ch(140),
     overflow: 'hidden',
+    transform: [{ scale: 0.85 }],
     
     
   },
@@ -164,7 +167,7 @@ const styles = StyleSheet.create({
     
   },
   logoContainer:{
-    flex:1,
+  
     flexDirection: 'row',
     gap:cw(25),
     
