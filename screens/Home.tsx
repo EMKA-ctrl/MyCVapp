@@ -26,7 +26,7 @@ const openMail = async () => {
   const email = 'sebastiamarc@gmail.com';
   const subject = 'Contact from App';
   const appUrl = `mailto:${email}?subject=${encodeURIComponent(subject)}`;
-  const webUrl = "https://mail.google.com/mail/?view=cm&fs=1&to=sebastiamarc@gmail.com&su=Contact%20from%20App";
+  const webUrl = "https://mail.google.com/mail/?view=cm&fs=1&to=sebastiamarc@gmail.com&su=ContactfromApp";
 
 
 
@@ -34,6 +34,7 @@ const openMail = async () => {
   if (supported) {
     await Linking.openURL(appUrl);
   } else {
+    alert(appUrl);
     await Linking.openURL(webUrl);
   }
 };
@@ -80,7 +81,7 @@ export default function HomeScreen({ navigation }: any) {
           <TouchableOpacity  onPress={openGithub}>
                   <Image style={styles.logos} source={require('../assets/github_logo.png')} ></Image>
           </TouchableOpacity>
-          <TouchableOpacity  onPress={openMail}>
+          <TouchableOpacity  onPress={() => navigation.navigate('ContactForm')}>
                   <Image style={styles.logos} source={require('../assets/mail_logo.png')} ></Image>
           </TouchableOpacity>
         </View>
