@@ -2,6 +2,12 @@
 import '../css/Home.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import LinkedinLogo from '../assets/linkedin_logo.png';
+import githubLogo from '../assets/github_logo.png';
+import mailLogo from '../assets/mail_logo.png';
+import reactLogo from '../assets/react.svg';
+import TSLogo from '../assets/Typescript_logo.png';
+import profilePic from '../assets/perfil.jpg';
 
 
 const CVScreen: React.FC = () => {
@@ -17,7 +23,7 @@ const CVScreen: React.FC = () => {
 
       <section className="cv-profile-section">
         <img
-          src='src\assets\perfil.jpg' // Asegúrate de que la imagen esté en la carpeta public/
+          src={profilePic}// Asegúrate de que la imagen esté en la carpeta public/
           alt="Marc Sebastià"
           className="cv-profile-image"
         />
@@ -43,21 +49,21 @@ const CVScreen: React.FC = () => {
       </section>
       <div className="cv-social-icons">
           <button className="social-icon-button" onClick={() =>  window.open('https://www.linkedin.com/in/marc-sebastia/')}>
-            <img src='src\assets\linkedin_logo.png'></img> 
+            <img src={LinkedinLogo}></img> 
           </button>
           <button className="social-icon-button" onClick={() => window.open('https://github.com/EMKA-ctrl')}>
-            <img src='src\assets\github_logo.png'></img>
+            <img src={githubLogo}></img>
           </button>
           <Link  to='/work-experience' className="social-icon-button" >{/* Aqui va el link al contact form */}
-            <img src='src\assets\mail_logo.png'></img>
+            <img src={mailLogo}></img>
           </Link>
         </div>
 
       <footer className="cv-footer">
         <p className="cv-footer-text">I made this with React & Typescript!</p>
         <div className="cv-powered-by">
-          <img src='src/assets/react.svg'/> 
-          <img src='src\assets\Typescript_logo.png'/>
+          <img src={reactLogo}/> 
+          <img src={TSLogo}/>
           
           
         </div>
