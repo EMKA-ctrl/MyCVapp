@@ -14,7 +14,7 @@ const CVScreen: React.FC = () => {
   
 
   return (
-    
+    <div>
     <div className="cv-container">
       
       <header className="cv-header">
@@ -69,6 +69,11 @@ const CVScreen: React.FC = () => {
         </div>
       </footer>
     </div>
+    <div className="cv-blur-overlay"></div>
+  <div className="cv-message">
+   Site under construction, give me a minute ..😵
+  </div>
+  </div>
     
   );
 };
